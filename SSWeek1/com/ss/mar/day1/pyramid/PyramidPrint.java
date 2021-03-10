@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.mar.pyramid;
+package com.ss.mar.day1.pyramid;
 
 /**
  * @author jcmal

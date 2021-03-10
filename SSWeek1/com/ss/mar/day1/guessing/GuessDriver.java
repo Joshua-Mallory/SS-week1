@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.mar.guessing;
+package com.ss.mar.day1.guessing;
 
 /**
  * @author jcmal
