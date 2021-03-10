@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.marday2.calc;
+package com.ss.mar.day2.calc;
 
 /**
  * @author jcmal

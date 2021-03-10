@@ -1,5 +1,6 @@
-package com.ss.marday2.area;
+package com.ss.mar.day2.area;
 
+//interface blueprint for other classes
 public interface Shape {
 	public abstract void calculateArea();
 

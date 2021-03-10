@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.marday2.max;
+package com.ss.mar.day2.max;
 
 import java.util.Vector;
 
