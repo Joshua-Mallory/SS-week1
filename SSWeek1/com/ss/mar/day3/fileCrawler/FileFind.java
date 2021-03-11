@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.mar.day3.file;
+package com.ss.mar.day3.fileCrawler;
 
 import java.io.File;
 import java.io.IOException;
