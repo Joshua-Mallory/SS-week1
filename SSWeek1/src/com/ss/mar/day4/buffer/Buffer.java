@@ -4,7 +4,16 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 //buffer with size determined by arrayBlock prints 100 attempts at random pulls or pushes
 public class Buffer {
-	public void wrap() {
+
+	static Runnable thread1;
+	static Runnable thread2;
+
+	public Buffer(Runnable thread1, Runnable thread2) {
+		Buffer.thread1 = thread1;
+		Buffer.thread2 = thread2;
+	}
+
+	public boolean wrap() {
 		// FIFO bounded object
 		ArrayBlockingQueue<Integer> arrayBlock = new ArrayBlockingQueue<Integer>(8);
 
@@ -40,17 +49,21 @@ public class Buffer {
 			}
 		};
 		ThreadRun(thread1, thread2);
+		return true;
 	}
 
-	public void ThreadRun(Runnable thread1, Runnable thread2) {
+	public boolean ThreadRun(Runnable thread1, Runnable thread2) {
 		System.out.println("Start Program");
 		int counter = 0;
+		thread1.run();
+		thread2.run();
 		while (counter != 100) {
 
 			new Thread(thread1).start();
 			new Thread(thread2).start();
 			counter++;
 		}
+		return true;
 
 	}
 }

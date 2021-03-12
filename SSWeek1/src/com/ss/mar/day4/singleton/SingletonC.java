@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.ss.mar.day4.single;
+package com.ss.mar.day4.singleton;
 
 /**
  * @author jcmal
@@ -10,7 +10,11 @@ package com.ss.mar.day4.single;
 public class SingletonC {
 
 	volatile public static SingletonC instance = null;
-	public String test = null;
+	public static String test = null;
+
+	private SingletonC() {
+		test = "Just for fun";
+	}
 
 	public static SingletonC getInstance() {
 		if (instance == null) {
@@ -20,10 +24,6 @@ public class SingletonC {
 			}
 		}
 		return instance;
-	}
-
-	private SingletonC() {
-		test = "Just for fun";
 	}
 
 }
