@@ -7,6 +7,7 @@ package com.ss.mar.day4.deadlock;
  * @author jcmal
  *
  */
+//creates a 3way lock
 public class DeadlockDriver {
 	public static void main(String[] args) {
 		Runnable thread1 = null;

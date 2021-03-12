@@ -89,7 +89,7 @@ public class Deadlock {
 		new Thread(thread1).start();
 		new Thread(thread2).start();
 		new Thread(thread3).start();
-		System.out.println("Program is locked out, I ran .runs() before threads for something.");
+		System.out.println("Program is deadlocked, I ran .runs() before threads for testing.");
 		System.out.println("End Program");
 		return true;
 
