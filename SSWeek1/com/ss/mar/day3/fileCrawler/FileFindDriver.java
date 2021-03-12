@@ -15,7 +15,11 @@ public class FileFindDriver {
 	 */
 	public static void main(String[] args) {
 		FileFind ff = new FileFind();
-		ff.PathFinder(args);
+		try {
+			ff.PathFinder(args);
+		} catch (Exception e) {
+			System.out.println("Some error has occured. Most likely an invalid path has been supplied");
+		}
 	}
 
 }
