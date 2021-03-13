@@ -92,6 +92,14 @@ public class DateTime {
 	public static void friday() {
 		// 7. Write an example that tests whether a given date occurs on Friday the
 		// 13th.
+		LocalDate df = LocalDate.of(2020, 3, 13);
+		String day = df.getDayOfWeek().toString();
+		YearMonth yearMonth = YearMonth.of(2020, 10);
+
+		DayOfWeek day2 = df.getDayOfWeek();
+		if (day2.equals(DayOfWeek.FRIDAY)) {
+			System.out.println(day2.toString());
+		}
 
 	}
 }
