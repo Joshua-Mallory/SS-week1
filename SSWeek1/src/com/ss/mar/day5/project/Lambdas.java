@@ -1,31 +1,35 @@
 package com.ss.mar.day5.project;
 
-import java.util.Arrays;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
 
 public class Lambdas {
 	public static void main(String[] args) {
-		List<String> myStr = Arrays.asList("johnst", "karen", "Davidian", "floundEr", "horse", "cow");
-		List<Integer> myInt = Arrays.asList(-2, 0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
-				21, 22, 23, 555, 5555);
-		List<String> myStrA = Arrays.asList("jote", "ape", "Davidian", "Art", "floundEr", "horse", "apple", "ask",
-				"asp", "Ant");
-		evenOrOdd(myInt);
-		primeOrComp(myInt);
-		isPal(myInt);
+		FileReader fileLoc = null;
+		try {
+			fileLoc = new FileReader("testLambda.txt");
+		} catch (FileNotFoundException e) {
+			System.out.println("Invalid File");
+			System.exit(0);
+		}
+		LambdaReader lr = new LambdaReader();
+		lr.reader(fileLoc);
+
 	}
 
-	public static String EvenOrOddArg(Integer temp1) {
+	public String EvenOrOddArg(Integer temp1) {
 
 		if (temp1 % 2 == 0)
-			return temp1 + " " + "Even";
+			return temp1 + " " + "EVEN";
 
-		return temp1 + " " + "Odd";
+		return temp1 + " " + "ODD";
 
 	}
 
-	public static String primeComp(Integer temp1) {
+	public String primeComp(Integer temp1) {
 		boolean prime = true;
 		for (int i = 2; i <= temp1 / 2; i++) {
 			if (temp1 % i == 0)
@@ -34,40 +38,48 @@ public class Lambdas {
 		if (temp1 < 2)
 			prime = false;
 		if (prime == true)
-			return temp1 + " " + "Prime";
+			return temp1 + " " + "PRIME";
 
-		return temp1 + " " + "Composite";
+		return temp1 + " " + "COMPOSITE";
 
 	}
 
-	public static String isPalinCheck(Integer temp1) {
+	public String isPalinCheck(Integer temp1) {
 		if (temp1 != 0 || temp1 != 1) {
 			int i = 0;
 			String numStr = (Integer.toString(temp1));
 			Integer j = numStr.length();
 			while (i < j) {
 				if (numStr.charAt(i) != numStr.charAt(j - 1)) {
-					return temp1 + " " + "Not Palindrome";
+					return temp1 + " " + "PALINDROME";
 				}
 				i++;
 				j--;
 			}
 		}
-		return temp1 + " " + "Is Palindrome";
+		return temp1 + " " + "NOT PALINDROME";
 	}
 
-	public static void evenOrOdd(List<Integer> myInt) {
-		List<String> evenOddList = myInt.stream().map(temp1 -> EvenOrOddArg(temp1)).collect(Collectors.toList());
+	public String switcher(Integer temp1, List<Integer> myValues, AtomicInteger counter) {
+		counter.getAndIncrement();
+		if (temp1 == 1) {
+			return EvenOrOddArg(myValues.get(counter.get()));
+		} else if (temp1 == 2) {
+			return primeComp(myValues.get(counter.get()));
+		} else if (temp1 == 3) {
+			return isPalinCheck(myValues.get(counter.get()));
+		} else {
+			return "Invalid Input";
+		}
+
+	}
+
+	public void lambdaWalk(List<Integer> myCases, List<Integer> myValues) {
+		AtomicInteger counter = new AtomicInteger(-1);
+		List<String> evenOddList = myCases.stream().map(temp1 -> switcher(temp1, myValues, counter))
+				.collect(Collectors.toList());
 		evenOddList.forEach(System.out::println);
+
 	}
 
-	public static void primeOrComp(List<Integer> myInt) {
-		List<String> primeOrComp = myInt.stream().map(temp1 -> primeComp(temp1)).collect(Collectors.toList());
-		primeOrComp.forEach(System.out::println);
-	}
-
-	public static void isPal(List<Integer> myInt) {
-		List<String> palindrome = myInt.stream().map(temp1 -> isPalinCheck(temp1)).collect(Collectors.toList());
-		palindrome.forEach(System.out::println);
-	}
 }
