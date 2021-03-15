@@ -17,18 +17,24 @@ public class RemoveX {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		List<String> myStr = Arrays.asList("jotxxe", "axpe", "Davidian", "Axrt", "floundEr", "hoxrse", "apple", "ask",
-				"asp", "Axnt");
-		removeX(myStr);
+		RemoveX rm = new RemoveX();
+		rm.removeX();
 	}
 
 	public static String removal(String temp1) {
-		return temp1.replaceAll("x", "");
+		if (temp1 != null) {
+			RemoveXFunction lf = temp2 -> temp2.replaceAll("x", "");
+			return lf.calculate(temp1);
+		} else
+			return null;
 	}
 
-	public static void removeX(List<String> myStr) {
+	public List<String> removeX() {
+		List<String> myStr = Arrays.asList("jotxxe", "axpe", "Davidian", "Axrt", "floundEr", "hoxrse", "apple", "ask",
+				"asp", "Axnt");
 		List<String> noX = myStr.stream().map(temp1 -> removal(temp1)).collect(Collectors.toList());
 		noX.forEach(System.out::println);
+		return noX;
 	}
 
 }

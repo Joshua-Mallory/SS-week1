@@ -39,7 +39,6 @@ public class RecursionSum {
 	}
 
 	public static boolean groupSumClump(List<Integer> myInt, int index, int target) {
-
 		if (index >= myInt.size())
 			return (target == 0);
 

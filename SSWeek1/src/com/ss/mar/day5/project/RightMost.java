@@ -18,16 +18,20 @@ public class RightMost {
 	 */
 	public static void main(String[] args) {
 		RightMost rt = new RightMost();
-		List<Integer> myInt = Arrays.asList(0, 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
-				22, 23, 555, 5555);
-		rt.right(myInt);
+		rt.right();
 	}
 
 	public static int onRight(Integer temp1) {
-		return temp1 % 10;
+		if (temp1 >= 0 && temp1 != null) {
+			RightMostFunction rm = temp2 -> (temp2 % 10);
+			return rm.calculate(temp1);
+		} else
+			return temp1;
 	}
 
-	public List<Integer> right(List<Integer> myInt) {
+	public List<Integer> right() {
+
+		List<Integer> myInt = Arrays.asList(0, 1, 15, 39, 199, 2005);
 		List<Integer> rightMost = myInt.stream().map(temp1 -> onRight(temp1)).collect(Collectors.toList());
 		rightMost.forEach(System.out::println);
 		return rightMost;
