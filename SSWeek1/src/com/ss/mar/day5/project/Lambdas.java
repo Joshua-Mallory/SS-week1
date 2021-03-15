@@ -3,6 +3,7 @@ package com.ss.mar.day5.project;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
+import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -11,8 +12,12 @@ import java.util.stream.Collectors;
 public class Lambdas {
 	public static void main(String[] args) {
 		FileReader fileLoc = null;
+
 		try {
-			fileLoc = new FileReader("testLambda.txt");
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Input filename (absolute or relative path)");
+			String name = sc.nextLine();
+			fileLoc = new FileReader(name);
 		} catch (FileNotFoundException e) {
 			System.out.println("Invalid File");
 			System.exit(0);
