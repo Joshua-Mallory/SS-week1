@@ -35,6 +35,8 @@ public class SampleSingleton {
 				x = rs.getBigDecimal(1).multiply(input);
 			}
 			conn.close();
+			st.close();
+			rs.close();
 		} catch (SQLException e) {
 			System.out.println("Some Error has occured");
 			e.printStackTrace();
