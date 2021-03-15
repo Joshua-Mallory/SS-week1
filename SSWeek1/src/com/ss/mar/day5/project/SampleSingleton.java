@@ -14,6 +14,10 @@ public class SampleSingleton {
 	private static Connection conn = null;
 	private static SampleSingleton instance = null;
 
+	private SampleSingleton() {
+
+	}
+
 	public static SampleSingleton getInstance() {
 		if (instance == null) {
 			synchronized (SampleSingleton.class) {
