@@ -22,7 +22,6 @@ public class LambdaDriver {
 				"asp", "Ant");
 		Lambda l = new Lambda();
 		l.Setup(myStr, myInt, myStrA);
-
 	}
 
 }

@@ -25,18 +25,20 @@ public class SampleSingleton {
 	}
 
 	public static void databaseQuery(BigDecimal input) {
+
 		try {
 			conn = DriverManager.getConnection("url of database");
-
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery("select id from table");
 			BigDecimal x = new BigDecimal(0);
 			while (rs.next()) {
 				x = rs.getBigDecimal(1).multiply(input);
 			}
+			conn.close();
 		} catch (SQLException e) {
 			System.out.println("Some Error has occured");
 			e.printStackTrace();
 		}
+
 	}
 }
