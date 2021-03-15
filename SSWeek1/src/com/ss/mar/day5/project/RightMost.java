@@ -20,11 +20,14 @@ public class RightMost {
 
 	// performs operation to get the rightmost integer
 	public static int onRight(Integer temp1) {
-		if (temp1 >= 0 && temp1 != null) {
+		try {
 			RightMostFunction rm = temp2 -> (temp2 % 10);
 			return rm.calculate(temp1);
-		} else
-			return temp1;
+
+		} catch (Exception e) {
+			System.out.println("Invalid Entry");
+			return -99999;
+		}
 	}
 
 	// begins stream to return a list of rightmost integers

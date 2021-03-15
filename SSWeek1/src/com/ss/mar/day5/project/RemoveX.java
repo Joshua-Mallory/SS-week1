@@ -19,7 +19,7 @@ public class RemoveX {
 	}
 
 	// removes all x from selct string, impements functional interface
-	public static String removal(String temp1) {
+	public String removal(String temp1) {
 		if (temp1 != null) {
 			RemoveXFunction lf = temp2 -> temp2.replaceAll("x", "");
 			return lf.calculate(temp1);

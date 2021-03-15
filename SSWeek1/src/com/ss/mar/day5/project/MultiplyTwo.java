@@ -14,11 +14,13 @@ public class MultiplyTwo {
 
 	// performs operation, implements functional interface
 	public int timesTwo(Integer temp1) {
-		if (temp1 != null) {
+		try {
 			MultiplyTwoFunction lf = temp2 -> (temp2 * 2);
 			return lf.calculate(temp1);
-		} else
-			return temp1;
+		} catch (Exception e) {
+			System.out.println("Invalid Entry");
+			return -99999;
+		}
 	}
 
 	// begins operations on given array

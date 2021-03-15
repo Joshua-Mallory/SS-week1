@@ -25,6 +25,7 @@ public class RightMostTest {
 		assertEquals(rm.onRight(12), 2);
 		assertEquals(rm.onRight(126), 6);
 		assertNotEquals(rm.onRight(0), 5);
+		assertEquals(rm.onRight(null), -99999);
 	}
 
 }

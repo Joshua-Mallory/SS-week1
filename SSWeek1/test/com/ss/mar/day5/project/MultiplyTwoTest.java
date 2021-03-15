@@ -27,6 +27,7 @@ public class MultiplyTwoTest {
 		assertNotEquals(mt.timesTwo(6), 10);
 		assertNotEquals(mt.timesTwo(-5), 10);
 		assertEquals(mt.timesTwo(0), 0);
+		assertEquals(mt.timesTwo(null), -99999);
 	}
 
 }

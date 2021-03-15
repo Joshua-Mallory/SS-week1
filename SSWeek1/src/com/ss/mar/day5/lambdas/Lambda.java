@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 
 /**
  * @author jcmal
- *
+ * 
  */
 public class Lambda {
 	// sets up comparators and predicates to be used as arguments and begins
