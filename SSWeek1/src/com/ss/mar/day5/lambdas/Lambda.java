@@ -14,6 +14,8 @@ import java.util.stream.Collectors;
  *
  */
 public class Lambda {
+	// sets up comparators and predicates to be used as arguments and begins
+	// function calls
 	public boolean Setup(List<String> myStr, List<Integer> myInt, List<String> myStrA) {
 		boolean valid = false;
 		if (myStr != null && myInt != null && myStrA != null) {
@@ -51,6 +53,7 @@ public class Lambda {
 
 	}
 
+	// determins if a string is even or odd and appends
 	public String evenOrOddArg(Integer temp1) {
 
 		if (temp1 % 2 == 0)
@@ -60,6 +63,7 @@ public class Lambda {
 
 	}
 
+	// used with multiple comparators to perform varios operations
 	public List<String> sortedStruct(List<String> myStr, Comparator<String> comp) {
 
 		List<String> sortedMyStr = myStr.stream().sorted(comp).collect(Collectors.toList());
@@ -69,6 +73,7 @@ public class Lambda {
 		return sortedMyStr;
 	}
 
+	// uses built in utilitys to sort
 	public List<String> sortWUtils(List<String> myStr, Predicate<String> pred, Predicate<String> predNoE) {
 		List<String> sortedMyStrE = myStr.stream().filter(pred).collect(Collectors.toList());
 		List<String> sortedMyStrNoE = myStr.stream().filter(predNoE).collect(Collectors.toList());
@@ -78,6 +83,7 @@ public class Lambda {
 		return sortedMyStrE;
 	}
 
+	// begins the evenOrOdd functioning and outputs back into one string
 	public String evenOrOdd(List<Integer> myInt) {
 		StringBuilder fin = new StringBuilder();
 		AtomicInteger counter = new AtomicInteger();
@@ -95,6 +101,7 @@ public class Lambda {
 
 	}
 
+	// sorts out strings that start with "a" and are 3 letters
 	public List<String> sortForA(List<String> myStr, Predicate<String> pred) {
 		List<String> sortedByA3 = myStr.stream().filter(pred).collect(Collectors.toList());
 		// sortedByA3.forEach(System.out::println);
@@ -102,6 +109,7 @@ public class Lambda {
 		return sortedByA3;
 	}
 
+	// print form used for multilple functions
 	public boolean printList(List<String> myStr) {
 		if (myStr != null) {
 			myStr.forEach(System.out::println);

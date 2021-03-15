@@ -12,9 +12,7 @@ import java.util.List;
  */
 public class LambdaDriver {
 
-	/**
-	 * @param args
-	 */
+	// performs a number of operations implementing lambda functions
 	public static void main(String[] args) {
 		List<String> myStr = Arrays.asList("johnst", "karen", "Davidian", "floundEr", "horse", "cow");
 		List<Integer> myInt = Arrays.asList(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);

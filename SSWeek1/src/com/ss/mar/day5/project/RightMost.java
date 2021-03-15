@@ -13,14 +13,12 @@ import java.util.stream.Collectors;
  */
 public class RightMost {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		RightMost rt = new RightMost();
 		rt.right();
 	}
 
+	// performs operation to get the rightmost integer
 	public static int onRight(Integer temp1) {
 		if (temp1 >= 0 && temp1 != null) {
 			RightMostFunction rm = temp2 -> (temp2 % 10);
@@ -29,6 +27,7 @@ public class RightMost {
 			return temp1;
 	}
 
+	// begins stream to return a list of rightmost integers
 	public List<Integer> right() {
 
 		List<Integer> myInt = Arrays.asList(0, 1, 15, 39, 199, 2005);

@@ -12,11 +12,7 @@ import java.util.List;
  */
 public class RecursionSum {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-
 		List<Integer> myInt = Arrays.asList(1, 2, 2, 5, 6, 6);
 		Integer target = 13;
 		Integer index = 0;
@@ -27,6 +23,7 @@ public class RecursionSum {
 
 	}
 
+	// performs operation for using consecutive identical integerss
 	public static int[] findSum(List<Integer> myInt, Integer index) {
 		Integer sameCheck = myInt.get(index);
 		Integer totalSame = 0;
@@ -38,6 +35,7 @@ public class RecursionSum {
 		return data;
 	}
 
+	// recursive function to determine if target can be reached
 	public static boolean groupSumClump(List<Integer> myInt, int index, int target) {
 		if (index >= myInt.size())
 			return (target == 0);

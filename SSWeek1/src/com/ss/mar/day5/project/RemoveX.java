@@ -13,14 +13,12 @@ import java.util.stream.Collectors;
  */
 public class RemoveX {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
 		RemoveX rm = new RemoveX();
 		rm.removeX();
 	}
 
+	// removes all x from selct string, impements functional interface
 	public static String removal(String temp1) {
 		if (temp1 != null) {
 			RemoveXFunction lf = temp2 -> temp2.replaceAll("x", "");
@@ -29,6 +27,7 @@ public class RemoveX {
 			return null;
 	}
 
+	// begins stream to perform operations on
 	public List<String> removeX() {
 		List<String> myStr = Arrays.asList("jotxxe", "axpe", "Davidian", "Axrt", "floundEr", "hoxrse", "apple", "ask",
 				"asp", "Axnt");

@@ -24,9 +24,7 @@ import java.util.stream.Collectors;
  */
 public class DateTime {
 
-	/**
-	 * @param args
-	 */
+	// performs many operations related to date time
 	public static void main(String[] args) {
 		DateTime dt = new DateTime();
 		LocalDateTime birth = LocalDateTime.of(1995, 02, 26, 15, 37, 46, 123456789);

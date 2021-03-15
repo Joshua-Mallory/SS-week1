@@ -8,10 +8,7 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author jcmal
- *
- */
+//reads in selected file and returns lists for operations to be performed on
 public class LambdaReader {
 	public boolean reader(FileReader fileLoc) {
 		if (fileLoc != null) {
